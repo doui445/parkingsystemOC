@@ -1,0 +1,13 @@
+/Users/manu/Documents/Code/Manu/Java/OC/Project4/parkingsystem-master/src/main/java/com/parkit/parkingsystem/model/Ticket.java
+/Users/manu/Documents/Code/Manu/Java/OC/Project4/parkingsystem-master/src/main/java/com/parkit/parkingsystem/constants/Fare.java
+/Users/manu/Documents/Code/Manu/Java/OC/Project4/parkingsystem-master/src/main/java/com/parkit/parkingsystem/model/ParkingSpot.java
+/Users/manu/Documents/Code/Manu/Java/OC/Project4/parkingsystem-master/src/main/java/com/parkit/parkingsystem/util/InputReaderUtil.java
+/Users/manu/Documents/Code/Manu/Java/OC/Project4/parkingsystem-master/src/main/java/com/parkit/parkingsystem/constants/ParkingType.java
+/Users/manu/Documents/Code/Manu/Java/OC/Project4/parkingsystem-master/src/main/java/com/parkit/parkingsystem/dao/TicketDAO.java
+/Users/manu/Documents/Code/Manu/Java/OC/Project4/parkingsystem-master/src/main/java/com/parkit/parkingsystem/constants/DBConstants.java
+/Users/manu/Documents/Code/Manu/Java/OC/Project4/parkingsystem-master/src/main/java/com/parkit/parkingsystem/dao/ParkingSpotDAO.java
+/Users/manu/Documents/Code/Manu/Java/OC/Project4/parkingsystem-master/src/main/java/com/parkit/parkingsystem/service/InteractiveShell.java
+/Users/manu/Documents/Code/Manu/Java/OC/Project4/parkingsystem-master/src/main/java/com/parkit/parkingsystem/App.java
+/Users/manu/Documents/Code/Manu/Java/OC/Project4/parkingsystem-master/src/main/java/com/parkit/parkingsystem/service/FareCalculatorService.java
+/Users/manu/Documents/Code/Manu/Java/OC/Project4/parkingsystem-master/src/main/java/com/parkit/parkingsystem/config/DataBaseConfig.java
+/Users/manu/Documents/Code/Manu/Java/OC/Project4/parkingsystem-master/src/main/java/com/parkit/parkingsystem/service/ParkingService.java
