@@ -7,13 +7,13 @@ import com.parkit.parkingsystem.model.Ticket;
 
     public void calculateFare(Ticket ticket, boolean discount){
 <span class="pc bpc" id="L9" title="1 of 4 branches missed.">        if( (ticket.getOutTime() == null) || (ticket.getOutTime().before(ticket.getInTime())) ){</span>
-<span class="fc" id="L10">            throw new IllegalArgumentException(&quot;Out time provided is incorrect:&quot;+ticket.getOutTime().toString());</span>
+<span class="fc" id="L10">            throw new IllegalArgumentException(&quot;Out time provided is incorrect:&quot;+ticket.getOutTime().getTime());</span>
         }
 
 <span class="fc" id="L13">        long inHour = ticket.getInTime().getTime();</span>
 <span class="fc" id="L14">        long outHour = ticket.getOutTime().getTime();</span>
 
-        //TODO: Some tests are failing here. Need to check if this logic is correct
+        //TODO Assert futur in time
 <span class="fc" id="L17">        double duration = (double) (outHour - inHour) / (1000*60*60);</span>
 
 <span class="pc bpc" id="L19" title="1 of 3 branches missed.">        switch (ticket.getParkingSpot().getParkingType()){</span>
