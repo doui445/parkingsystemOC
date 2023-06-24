@@ -92,16 +92,24 @@ public class TicketDAO {
         int nbTicket = 0;
         try {
             con = dataBaseConfig.getConnection();
-            PreparedStatement ps = con.prepareStatement(DBConstants.GET_TICKET);
+            PreparedStatement ps = con.prepareStatement(DBConstants.GET_ALL_TICKETS);
             //ID, PARKING_NUMBER, VEHICLE_REG_NUMBER, PRICE, IN_TIME, OUT_TIME)
             ps.setString(1,vehicleRegNumber);
             ResultSet rs = ps.executeQuery();
-
+            while (rs.next()){
+                nbTicket ++;
+            }
+            dataBaseConfig.closeResultSet(rs);
+            return nbTicket;
         }catch (Exception ex){
             logger.error("Error getting number of tickets",ex);
         }finally {
             dataBaseConfig.closeConnection(con);
         }
-        return nbTicket;
+        return 0;
+    }
+
+    public void setDataBaseConfig(DataBaseConfig dataBaseConfig) {
+        this.dataBaseConfig = dataBaseConfig;
     }
 }
