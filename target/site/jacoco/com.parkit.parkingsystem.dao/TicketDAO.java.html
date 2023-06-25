@@ -92,17 +92,25 @@ import java.sql.Timestamp;
 <span class="nc" id="L92">        int nbTicket = 0;</span>
         try {
 <span class="nc" id="L94">            con = dataBaseConfig.getConnection();</span>
-<span class="nc" id="L95">            PreparedStatement ps = con.prepareStatement(DBConstants.GET_TICKET);</span>
+<span class="nc" id="L95">            PreparedStatement ps = con.prepareStatement(DBConstants.GET_ALL_TICKETS);</span>
             //ID, PARKING_NUMBER, VEHICLE_REG_NUMBER, PRICE, IN_TIME, OUT_TIME)
 <span class="nc" id="L97">            ps.setString(1,vehicleRegNumber);</span>
 <span class="nc" id="L98">            ResultSet rs = ps.executeQuery();</span>
-
-<span class="nc" id="L100">        }catch (Exception ex){</span>
-<span class="nc" id="L101">            logger.error(&quot;Error getting number of tickets&quot;,ex);</span>
+<span class="nc bnc" id="L99" title="All 2 branches missed.">            while (rs.next()){</span>
+<span class="nc" id="L100">                nbTicket ++;</span>
+            }
+<span class="nc" id="L102">            dataBaseConfig.closeResultSet(rs);</span>
+<span class="nc" id="L103">            return nbTicket;</span>
+<span class="nc" id="L104">        }catch (Exception ex){</span>
+<span class="nc" id="L105">            logger.error(&quot;Error getting number of tickets&quot;,ex);</span>
         }finally {
-<span class="nc" id="L103">            dataBaseConfig.closeConnection(con);</span>
+<span class="nc" id="L107">            dataBaseConfig.closeConnection(con);</span>
         }
-<span class="nc" id="L105">        return nbTicket;</span>
+<span class="nc" id="L109">        return 0;</span>
     }
+
+    public void setDataBaseConfig(DataBaseConfig dataBaseConfig) {
+<span class="nc" id="L113">        this.dataBaseConfig = dataBaseConfig;</span>
+<span class="nc" id="L114">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>

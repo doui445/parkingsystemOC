@@ -74,6 +74,7 @@ public class FareCalculatorServiceTest {
         Date inTime = new Date();
         inTime.setTime( System.currentTimeMillis() + (  60 * 60 * 1000) );
         Date outTime = new Date();
+        outTime.setTime( System.currentTimeMillis() );
         ParkingSpot parkingSpot = new ParkingSpot(1, ParkingType.BIKE,false);
 
         ticket.setInTime(inTime);
@@ -163,7 +164,7 @@ public class FareCalculatorServiceTest {
         ticket.setOutTime(ouTime);
         ticket.setParkingSpot(parkingSpot);
         fareCalculatorService.calculateFare(ticket, true);
-        assertEquals(0.95 * Fare.CAR_RATE_PER_HOUR, ticket.getPrice());
+        assertEquals((double)Math.round(0.95 * Fare.CAR_RATE_PER_HOUR * 1000) / 1000, ticket.getPrice());
     }
 
     @Test
@@ -177,6 +178,6 @@ public class FareCalculatorServiceTest {
         ticket.setOutTime(ouTime);
         ticket.setParkingSpot(parkingSpot);
         fareCalculatorService.calculateFare(ticket, true);
-        assertEquals(0.95 * Fare.BIKE_RATE_PER_HOUR, ticket.getPrice());
+        assertEquals((double)Math.round(0.95 * Fare.BIKE_RATE_PER_HOUR * 1000) / 1000, ticket.getPrice());
     }
 }
